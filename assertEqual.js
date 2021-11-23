@@ -7,7 +7,3 @@ const assertEqual = function(actual, expected) {
   }
 
 };
-
-// TEST CODE
-assertEqual("Rahwa", "Akeem");
-assertEqual(22, 22);
