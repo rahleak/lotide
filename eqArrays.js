@@ -1,3 +1,13 @@
+const assertEqual = function(actual, expected) {
+
+  if (actual === expected) {
+    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑Asserstion Failed: ${actual} !== ${expected}`);
+  }
+
+};
+
 const eqArrays = function(actual, expected) {
   correctArr = [];
 
@@ -8,9 +18,9 @@ const eqArrays = function(actual, expected) {
       }
     }
     } if (correctArr.length === actual.length) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+    return true;
   } else {
-    console.log(`🛑🛑🛑Asserstion Failed: ${actual} !== ${expected}`);
+    return false;
   }
 
 };
@@ -20,3 +30,5 @@ eqArrays([1, 2, 3], [3, 2, 1]) // => false
 
 eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
+
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
