@@ -1,3 +1,12 @@
+const assertArraysEqual = function (actual, expected, eqFunc) {
+  
+  if (eqFunc(actual, expected)) {
+    console.log(`✅✅✅Assertion Passed`);
+  } else {
+    console.log(`🛑🛑🛑Asserstion Failed`);
+  }
+}
+
 const eqArrays = function(actual, expected) {
   correctArr = [];
 
@@ -15,22 +24,6 @@ const eqArrays = function(actual, expected) {
 
 };
 
-const assertArraysEqual = function (arrOne, arrTwo) {
-  correctArr = [];
-
-  if (arrOne.length === arrTwo.length) {
-    for (let i = 0; i < arrOne.length; i++){
-      if (arrOne[i] === arrTwo[i]) {
-        correctArr.push(arrOne[i])
-      }
-    }
-    } if (correctArr.length === arrOne.length) {
-    console.log(`✅✅✅Arrays match: ${arrOne} === ${arrTwo}`)
-  } else {
-    console.log(`🛑🛑🛑Arrays do not match: ${arrOne} !== ${arrTwo}`)
-  }
-}
-
 const middle = function(arr) {
   midNums = []
 
@@ -46,6 +39,15 @@ const middle = function(arr) {
 
   return midNums;
 }
+
+middle([1])
+middle([1, 2])
+
+middle([1, 2, 3])
+middle([1, 2, 3, 4, 5])
+
+middle([1, 2, 3, 4])
+middle([1, 2, 3, 4, 5, 6])
 
 middle([1])
 middle([1, 2])
