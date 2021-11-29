@@ -1,17 +1,28 @@
-const assertArraysEqual = function (arrOne, arrTwo) {
+
+const eqArrays = function(actual, expected) {
   correctArr = [];
 
-  if (arrOne.length === arrTwo.length) {
-    for (let i = 0; i < arrOne.length; i++){
-      if (arrOne[i] === arrTwo[i]) {
-        correctArr.push(arrOne[i])
+  if (actual.length === expected.length) {
+    for (let i = 0; i < actual.length; i++){
+      if (actual[i] === expected[i]) {
+        correctArr.push(actual[i])
       }
     }
-    } if (correctArr.length === arrOne.length) {
-    console.log(`✅✅✅Arrays match: ${arrOne} === ${arrTwo}`)
+    } if (correctArr.length === actual.length) {
+    return true;
   } else {
-    console.log(`🛑🛑🛑Arrays do not match: ${arrOne} !== ${arrTwo}`)
+    return false;
+  }
+
+};
+
+
+const assertArraysEqual = function (actual, expected, eqFunc) {
+  
+  if (eqFunc(actual, expected)) {
+    console.log(`✅✅✅Assertion Passed`);
+  } else {
+    console.log(`🛑🛑🛑Asserstion Failed`);
   }
 }
 
-assertArraysEqual([1, 2, 3], [1, 2, 3, 4])
