@@ -1,28 +1,6 @@
-const assertArraysEqual = function (actual, expected, eqFunc) {
-  
-  if (eqFunc(actual, expected)) {
-    console.log(`✅✅✅Assertion Passed`);
-  } else {
-    console.log(`🛑🛑🛑Asserstion Failed`);
-  }
-}
 
-const eqArrays = function(actual, expected) {
-  correctArr = [];
+const eqArrays = require('../eqArrays')
 
-  if (actual.length === expected.length) {
-    for (let i = 0; i < actual.length; i++){
-      if (actual[i] === expected[i]) {
-        correctArr.push(actual[i])
-      }
-    }
-    } if (correctArr.length === actual.length) {
-    return true;
-  } else {
-    return false;
-  }
-
-};
 
 const middle = function(arr) {
   midNums = []
@@ -39,6 +17,7 @@ const middle = function(arr) {
 
   return midNums;
 }
+module.exports = middle;
 
 middle([1])
 middle([1, 2])
